@@ -22,8 +22,9 @@ def transform(data, *args, **kwargs):
     print(f"Preprocessing: rows with zero trip distance {data['trip_distance'].isin([0]).sum()}")
     data = data[(data['passenger_count'] != 0) & (data['trip_distance'] != 0)]
 
-    data['lpep_pickup_date'] = data['lpep_pickup_datetime'].dt.strftime('%Y-%m-%d')
+    data['lpep_pickup_date'] = data['lpep_pickup_datetime'].dt.date
 
+    print(f"Total days of data: {len(data['lpep_pickup_date'].unique().tolist())}")
     #print(data.info())
     #print(data['VendorID'].unique().tolist())
 
