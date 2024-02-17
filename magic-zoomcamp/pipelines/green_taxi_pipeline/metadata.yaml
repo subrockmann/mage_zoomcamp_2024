@@ -26,13 +26,13 @@ blocks:
   language: python
   name: transform_green_taxi_data
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: transformer
   upstream_blocks:
   - load_api_data_green_taxi
   uuid: transform_green_taxi_data
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks:
@@ -51,7 +51,7 @@ blocks:
   upstream_blocks:
   - transform_green_taxi_data
   uuid: camel_case_to_snake_case
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks: []
@@ -89,7 +89,7 @@ blocks:
   type: data_loader
   upstream_blocks: []
   uuid: load_green_taxi_data_postgres
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration:
     data_provider: postgres
@@ -108,7 +108,7 @@ blocks:
   upstream_blocks:
   - camel_case_to_snake_case
   uuid: green_taxi_data_to_gcs_parquet
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks: []
@@ -145,7 +145,6 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-02-06 15:34:14'
 uuid: green_taxi_pipeline
 variables_dir: /home/src/mage_data/magic-zoomcamp
 widgets: []
